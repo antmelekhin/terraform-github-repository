@@ -1,0 +1,16 @@
+.DS_Store
+
+# Terraform template
+## Local .terraform directories
+**/.terraform/*
+**/.terragrunt-cache/*
+
+.terraform.lock.hcl
+
+## .tfstate files
+*.tfstate
+*.tfstate.*
+
+## terraform.tfvars files
+*.tfvars
+*.tfvars.*
