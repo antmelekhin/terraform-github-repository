@@ -110,9 +110,9 @@ variable "archive_on_destroy" {
 }
 
 variable "vulnerability_alerts" {
-  description = "Set to `true` to enable security alerts for vulnerable dependencies."
+  description = "Set to `false` to disable security alerts for vulnerable dependencies."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "topics" {

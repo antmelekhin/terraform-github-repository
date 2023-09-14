@@ -52,7 +52,7 @@ No modules.
 | <a name="input_license_template"></a> [license\_template](#input\_license\_template) | Use the name of the template without the extension. For example, 'mit' or 'mpl-2.0'. | `string` | `null` | no |
 | <a name="input_topics"></a> [topics](#input\_topics) | The list of topics of the repository. | `set(string)` | `[]` | no |
 | <a name="input_visibility"></a> [visibility](#input\_visibility) | Visibility of a project. Can be `public`, `private` or `internal` (GHE only). | `string` | `"public"` | no |
-| <a name="input_vulnerability_alerts"></a> [vulnerability\_alerts](#input\_vulnerability\_alerts) | Set to `true` to enable security alerts for vulnerable dependencies. | `bool` | `false` | no |
+| <a name="input_vulnerability_alerts"></a> [vulnerability\_alerts](#input\_vulnerability\_alerts) | Set to `false` to disable security alerts for vulnerable dependencies. | `bool` | `true` | no |
 
 ## Outputs
 
