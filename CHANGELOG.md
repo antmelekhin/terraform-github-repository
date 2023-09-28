@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/antmelekhin/terraform-github-repository/compare/v1.0.1...v1.0.2) (2023-09-28)
+
+
+### Fixes
+
+* disable `GitHub Discussions` by default ([#3](https://github.com/antmelekhin/terraform-github-repository/issues/3)) ([e3701ae](https://github.com/antmelekhin/terraform-github-repository/commit/e3701aef811868e7898928a308fa90795339ccb1))
+
 ## [1.0.1](https://github.com/antmelekhin/terraform-github-repository/compare/v1.0.0...v1.0.1) (2023-09-14)
 
 
