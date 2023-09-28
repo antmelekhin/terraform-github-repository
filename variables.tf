@@ -32,9 +32,9 @@ variable "has_issues" {
 }
 
 variable "has_discussions" {
-  description = "Set to `false` to disable the GitHub Discussions features on the repository."
+  description = "Set to `true` to enable the GitHub Discussions features on the repository."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "has_projects" {
