@@ -44,7 +44,7 @@ No modules.
 | <a name="input_delete_branch_on_merge"></a> [delete\_branch\_on\_merge](#input\_delete\_branch\_on\_merge) | Automatically delete head branch after a pull request is merged. | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A description of the repository. | `string` | `null` | no |
 | <a name="input_gitignore_template"></a> [gitignore\_template](#input\_gitignore\_template) | Use the name of the template without the extension. For example, 'Haskell'. | `string` | `null` | no |
-| <a name="input_has_discussions"></a> [has\_discussions](#input\_has\_discussions) | Set to `false` to disable the GitHub Discussions features on the repository. | `bool` | `true` | no |
+| <a name="input_has_discussions"></a> [has\_discussions](#input\_has\_discussions) | Set to `true` to enable the GitHub Discussions features on the repository. | `bool` | `false` | no |
 | <a name="input_has_issues"></a> [has\_issues](#input\_has\_issues) | Set to `false` to disable the GitHub Issues features on the repository. | `bool` | `true` | no |
 | <a name="input_has_projects"></a> [has\_projects](#input\_has\_projects) | Set to `true` to enable the GitHub Projects features on the repository. | `bool` | `false` | no |
 | <a name="input_has_wiki"></a> [has\_wiki](#input\_has\_wiki) | Set to `true` to enable the GitHub Wiki features on the repository. | `bool` | `false` | no |
