@@ -25,6 +25,18 @@ variable "visibility" {
   default     = "public"
 }
 
+variable "is_template" {
+  description = "Set to `true` to tell GitHub that this is a template repository."
+  type        = bool
+  default     = false
+}
+
+variable "has_wiki" {
+  description = "Set to `true` to enable the GitHub Wiki features on the repository."
+  type        = bool
+  default     = false
+}
+
 variable "has_issues" {
   description = "Set to `false` to disable the GitHub Issues features on the repository."
   type        = bool
@@ -43,16 +55,22 @@ variable "has_projects" {
   default     = false
 }
 
-variable "has_wiki" {
-  description = "Set to `true` to enable the GitHub Wiki features on the repository."
-  type        = bool
-  default     = false
-}
-
 variable "allow_merge_commit" {
   description = "Set to `false` to disable merge commits on the repository."
   type        = bool
   default     = true
+}
+
+variable "merge_commit_title" {
+  description = "Can be `PR_TITLE` or `MERGE_MESSAGE` for a default merge commit title."
+  type        = string
+  default     = "MERGE_MESSAGE"
+}
+
+variable "merge_commit_message" {
+  description = "Can be `PR_BODY`, `PR_TITLE`, or `BLANK` for a default merge commit message."
+  type        = string
+  default     = "PR_TITLE"
 }
 
 variable "allow_squash_merge" {
@@ -61,8 +79,26 @@ variable "allow_squash_merge" {
   default     = true
 }
 
+variable "squash_merge_commit_title" {
+  description = "Can be `PR_TITLE` or `COMMIT_OR_PR_TITLE` for a default squash merge commit title."
+  type        = string
+  default     = "COMMIT_OR_PR_TITLE"
+}
+
+variable "squash_merge_commit_message" {
+  description = "Can be `PR_BODY`, `COMMIT_MESSAGES`, or `BLANK` for a default squash merge commit message."
+  type        = string
+  default     = "COMMIT_MESSAGES"
+}
+
 variable "allow_rebase_merge" {
   description = "Set to `false` to disable rebase merges on the repository."
+  type        = bool
+  default     = true
+}
+
+variable "allow_update_branch" {
+  description = "Set to `false` to disable updating pull request branches."
   type        = bool
   default     = true
 }
@@ -79,8 +115,14 @@ variable "delete_branch_on_merge" {
   default     = false
 }
 
+variable "web_commit_signoff_required" {
+  description = "Require contributors to sign off on web-based commits."
+  type        = bool
+  default     = false
+}
+
 variable "auto_init" {
-  description = "Set to true to produce an initial commit in the repository."
+  description = "Set to `true` to produce an initial commit in the repository."
   type        = bool
   default     = false
 }
@@ -113,6 +155,12 @@ variable "vulnerability_alerts" {
   description = "Set to `false` to disable security alerts for vulnerable dependencies."
   type        = bool
   default     = true
+}
+
+variable "ignore_vulnerability_alerts_during_read" {
+  description = "Set to `true` to not call the vulnerability alerts endpoint so the resource can also be used without admin permissions during read."
+  type        = bool
+  default     = null
 }
 
 variable "topics" {
