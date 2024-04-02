@@ -1,3 +1,7 @@
+output "name" {
+  description = "The name of the repository."
+  value       = github_repository.this.name
+}
 output "full_name" {
   description = "A string of the form 'orgname/reponame'."
   value       = github_repository.this.full_name
@@ -21,6 +25,11 @@ output "http_clone_url" {
 output "git_clone_url" {
   description = "URL that can be provided to `git clone` to clone the repository anonymously via the git protocol."
   value       = github_repository.this.git_clone_url
+}
+
+output "default_branch" {
+  description = "The name of the default branch of the repository."
+  value       = github_repository.this.default_branch
 }
 
 output "repo_id" {

@@ -66,10 +66,12 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_default_branch"></a> [default\_branch](#output\_default\_branch) | The name of the default branch of the repository. |
 | <a name="output_full_name"></a> [full\_name](#output\_full\_name) | A string of the form 'orgname/reponame'. |
 | <a name="output_git_clone_url"></a> [git\_clone\_url](#output\_git\_clone\_url) | URL that can be provided to `git clone` to clone the repository anonymously via the git protocol. |
 | <a name="output_html_url"></a> [html\_url](#output\_html\_url) | URL to the repository on the web. |
 | <a name="output_http_clone_url"></a> [http\_clone\_url](#output\_http\_clone\_url) | URL that can be provided to `git clone` to clone the repository via HTTPS. |
+| <a name="output_name"></a> [name](#output\_name) | The name of the repository. |
 | <a name="output_repo_id"></a> [repo\_id](#output\_repo\_id) | GitHub ID for the repository. |
 | <a name="output_ssh_clone_url"></a> [ssh\_clone\_url](#output\_ssh\_clone\_url) | URL that can be provided to `git clone` to clone the repository via SSH. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
