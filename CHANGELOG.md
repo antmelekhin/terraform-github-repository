@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.0.2...v1.1.0) (2024-04-02)
+
+
+### Continuous Integration
+
+* update release rules ([35a7c1d](https://github.com/antmelekhin/terraform-github-repository/commit/35a7c1d87b483ed1eff600682b5de1134e6381b8))
+
+
+### Features
+
+* update provider version and add new resource arguments ([#4](https://github.com/antmelekhin/terraform-github-repository/issues/4)) ([0ec39e8](https://github.com/antmelekhin/terraform-github-repository/commit/0ec39e803040615d9f9e4930ef356297b0dd9dea))
+
 ## [1.0.2](https://github.com/antmelekhin/terraform-github-repository/compare/v1.0.1...v1.0.2) (2023-09-28)
 
 
