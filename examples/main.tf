@@ -1,6 +1,6 @@
 provider "github" {}
 
-module "repository" {
+module "public_repository" {
   source = "../"
 
   name               = "public-repository"
