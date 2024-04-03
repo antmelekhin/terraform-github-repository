@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/antmelekhin/terraform-github-repository/compare/v1.1.0...v1.1.1) (2024-04-03)
+
+
+### Fixes
+
+* minor changes ([#6](https://github.com/antmelekhin/terraform-github-repository/issues/6)) ([be00fe6](https://github.com/antmelekhin/terraform-github-repository/commit/be00fe6368389e84cf83c8156664e3504d644633))
+
 ## [1.1.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.0.2...v1.1.0) (2024-04-02)
 
 
