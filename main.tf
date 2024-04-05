@@ -50,10 +50,6 @@ resource "github_branch" "default" {
 
   repository = github_repository.this.name
   branch     = var.default_branch
-
-  depends_on = [
-    github_repository.this
-  ]
 }
 
 resource "github_branch_default" "this" {
@@ -64,7 +60,6 @@ resource "github_branch_default" "this" {
   rename     = var.default_branch_rename
 
   depends_on = [
-    github_repository.this,
     github_branch.default
   ]
 }
@@ -82,7 +77,7 @@ resource "github_branch" "additional" {
   source_sha    = try(each.value.source_sha, null)
 
   depends_on = [
-    github_repository.this
+    github_branch_default.this
   ]
 }
 
