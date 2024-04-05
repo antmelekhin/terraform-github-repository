@@ -25,6 +25,8 @@ No modules.
 | Name | Type |
 |------|------|
 | [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
+| [github_branch.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
+| [github_branch_default.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 
 ## Inputs
@@ -42,6 +44,8 @@ No modules.
 | <a name="input_archive_on_destroy"></a> [archive\_on\_destroy](#input\_archive\_on\_destroy) | Set to `true` to archive the repository instead of deleting on destroy. | `bool` | `false` | no |
 | <a name="input_archived"></a> [archived](#input\_archived) | Specifies if the repository should be archived. | `bool` | `false` | no |
 | <a name="input_auto_init"></a> [auto\_init](#input\_auto\_init) | Set to `true` to produce an initial commit in the repository. | `bool` | `false` | no |
+| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | The name of the default branch of the repository. Branches can only be created on non-empty repositories. | `string` | `"main"` | no |
+| <a name="input_default_branch_rename"></a> [default\_branch\_rename](#input\_default\_branch\_rename) | Indicate if it should rename the branch rather than use an existing branch. | `bool` | `false` | no |
 | <a name="input_delete_branch_on_merge"></a> [delete\_branch\_on\_merge](#input\_delete\_branch\_on\_merge) | Automatically delete head branch after a pull request is merged. | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A description of the repository. | `string` | `null` | no |
 | <a name="input_gitignore_template"></a> [gitignore\_template](#input\_gitignore\_template) | Use the name of the template without the extension. For example, 'Haskell'. | `string` | `null` | no |

@@ -1,3 +1,7 @@
+################################################################
+# Repository
+################################################################
+
 output "name" {
   description = "The name of the repository."
   value       = github_repository.this.name
@@ -27,12 +31,16 @@ output "git_clone_url" {
   value       = github_repository.this.git_clone_url
 }
 
-output "default_branch" {
-  description = "The name of the default branch of the repository."
-  value       = github_repository.this.default_branch
-}
-
 output "repo_id" {
   description = "GitHub ID for the repository."
   value       = github_repository.this.repo_id
+}
+
+################################################################
+# Branches
+################################################################
+
+output "default_branch" {
+  description = "The name of the default branch of the repository."
+  value       = try(github_branch.default[0].branch, var.default_branch)
 }
