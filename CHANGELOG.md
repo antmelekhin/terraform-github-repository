@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/antmelekhin/terraform-github-repository/compare/v1.3.0...v1.3.1) (2024-04-05)
+
+
+### Fixes
+
+* update `depends_on` meta-argument for branch resources ([#9](https://github.com/antmelekhin/terraform-github-repository/issues/9)) ([8d5e059](https://github.com/antmelekhin/terraform-github-repository/commit/8d5e059fa3fe0348362dbcc4b8e2dad6d20be803))
+
 ## [1.3.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.2.0...v1.3.0) (2024-04-05)
 
 
