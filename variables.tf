@@ -170,7 +170,7 @@ variable "topics" {
 }
 
 ################################################################
-# Branches
+# Branches variables
 ################################################################
 
 variable "default_branch" {
@@ -192,7 +192,7 @@ variable "branches" {
 }
 
 ################################################################
-# Actions secret variables
+# Actions secret and variable variables
 ################################################################
 
 variable "actions_encrypted_secrets" {
@@ -203,6 +203,12 @@ variable "actions_encrypted_secrets" {
 
 variable "actions_plaintext_secrets" {
   description = "Configuring plaintext actions secrets."
+  type        = map(string)
+  default     = {}
+}
+
+variable "actions_variables" {
+  description = "Configuring actions variables."
   type        = map(string)
   default     = {}
 }
