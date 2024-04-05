@@ -69,6 +69,23 @@ resource "github_branch_default" "this" {
   ]
 }
 
+locals {
+  branches = { for branch in var.branches : branch.name => branch }
+}
+
+resource "github_branch" "additional" {
+  for_each = local.branches
+
+  repository    = github_repository.this.name
+  branch        = each.key
+  source_branch = try(each.value.source_branch, null)
+  source_sha    = try(each.value.source_sha, null)
+
+  depends_on = [
+    github_repository.this
+  ]
+}
+
 ################################################################
 # Actions secret
 ################################################################
