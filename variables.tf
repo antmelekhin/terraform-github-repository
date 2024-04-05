@@ -170,6 +170,28 @@ variable "topics" {
 }
 
 ################################################################
+# Branches
+################################################################
+
+variable "default_branch" {
+  description = "The name of the default branch of the repository. Branches can only be created on non-empty repositories."
+  type        = string
+  default     = "main"
+}
+
+variable "default_branch_rename" {
+  description = "Indicate if it should rename the branch rather than use an existing default branch."
+  type        = bool
+  default     = false
+}
+
+variable "branches" {
+  description = "The list of a branches of the repository. Branches can only be created on non-empty repositories."
+  type        = list(map(string))
+  default     = []
+}
+
+################################################################
 # Actions secret variables
 ################################################################
 

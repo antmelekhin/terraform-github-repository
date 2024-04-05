@@ -42,6 +42,51 @@ resource "github_repository" "this" {
 }
 
 ################################################################
+# Branches
+################################################################
+
+resource "github_branch" "default" {
+  count = var.default_branch == "main" || var.default_branch_rename == true ? 0 : 1
+
+  repository = github_repository.this.name
+  branch     = var.default_branch
+
+  depends_on = [
+    github_repository.this
+  ]
+}
+
+resource "github_branch_default" "this" {
+  count = var.default_branch == "main" ? 0 : 1
+
+  repository = github_repository.this.name
+  branch     = var.default_branch
+  rename     = var.default_branch_rename
+
+  depends_on = [
+    github_repository.this,
+    github_branch.default
+  ]
+}
+
+locals {
+  branches = { for branch in var.branches : branch.name => branch }
+}
+
+resource "github_branch" "additional" {
+  for_each = local.branches
+
+  repository    = github_repository.this.name
+  branch        = each.key
+  source_branch = try(each.value.source_branch, null)
+  source_sha    = try(each.value.source_sha, null)
+
+  depends_on = [
+    github_repository.this
+  ]
+}
+
+################################################################
 # Actions secret
 ################################################################
 
