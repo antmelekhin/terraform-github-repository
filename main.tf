@@ -87,7 +87,7 @@ resource "github_branch" "additional" {
 }
 
 ################################################################
-# Actions secret
+# Actions secret and variable
 ################################################################
 
 locals {
@@ -104,4 +104,16 @@ resource "github_actions_secret" "this" {
   secret_name     = each.key
   encrypted_value = try(each.value.encrypted, null)
   plaintext_value = try(each.value.plaintext, null)
+}
+
+locals {
+  actions_variables = { for name, value in var.actions_variables : name => value }
+}
+
+resource "github_actions_variable" "this" {
+  for_each = local.actions_variables
+
+  repository    = github_repository.this.name
+  variable_name = each.key
+  value         = each.value
 }
