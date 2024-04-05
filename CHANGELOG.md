@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.1.1...v1.2.0) (2024-04-05)
+
+
+### Features
+
+* added variables and appropriate resources that creates branches ([#7](https://github.com/antmelekhin/terraform-github-repository/issues/7)) ([317cb10](https://github.com/antmelekhin/terraform-github-repository/commit/317cb1059013ba27ba3fe5cd0672e80064626611))
+
 ## [1.1.1](https://github.com/antmelekhin/terraform-github-repository/compare/v1.1.0...v1.1.1) (2024-04-03)
 
 
