@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.2.0...v1.3.0) (2024-04-05)
+
+
+### Features
+
+* add actions variables ([#8](https://github.com/antmelekhin/terraform-github-repository/issues/8)) ([380ef60](https://github.com/antmelekhin/terraform-github-repository/commit/380ef6069dd20801d5c0ac50d8e22eb7b3c17acf))
+
 ## [1.2.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.1.1...v1.2.0) (2024-04-05)
 
 
