@@ -6,6 +6,7 @@ output "name" {
   description = "The name of the repository."
   value       = github_repository.this.name
 }
+
 output "full_name" {
   description = "A string of the form 'orgname/reponame'."
   value       = github_repository.this.full_name
