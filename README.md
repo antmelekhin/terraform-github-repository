@@ -30,6 +30,7 @@ No modules.
 | [github_branch.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
+| [github_branch.default](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/branch) | data source |
 
 ## Inputs
 
