@@ -43,5 +43,5 @@ output "repo_id" {
 
 output "default_branch" {
   description = "The name of the default branch of the repository."
-  value       = var.default_branch
+  value       = try(github_branch.default[0].branch, github_branch_default.this[0].branch, "main")
 }
