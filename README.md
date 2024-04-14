@@ -48,7 +48,7 @@ No modules.
 | <a name="input_archived"></a> [archived](#input\_archived) | Specifies if the repository should be archived. | `bool` | `false` | no |
 | <a name="input_auto_init"></a> [auto\_init](#input\_auto\_init) | Set to `true` to produce an initial commit in the repository. | `bool` | `false` | no |
 | <a name="input_branches"></a> [branches](#input\_branches) | The list of a branches of the repository. Branches can only be created on non-empty repositories. | `list(map(string))` | `[]` | no |
-| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | The name of the default branch of the repository. Branches can only be created on non-empty repositories. | `string` | `"main"` | no |
+| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | The name of the default branch of the repository. Default branch can only be created on non-empty repositories. | `string` | `null` | no |
 | <a name="input_default_branch_rename"></a> [default\_branch\_rename](#input\_default\_branch\_rename) | Indicate if it should rename the branch rather than use an existing default branch. | `bool` | `false` | no |
 | <a name="input_delete_branch_on_merge"></a> [delete\_branch\_on\_merge](#input\_delete\_branch\_on\_merge) | Automatically delete head branch after a pull request is merged. | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A description of the repository. | `string` | `null` | no |

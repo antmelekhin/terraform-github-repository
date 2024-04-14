@@ -174,9 +174,9 @@ variable "topics" {
 ################################################################
 
 variable "default_branch" {
-  description = "The name of the default branch of the repository. Branches can only be created on non-empty repositories."
+  description = "The name of the default branch of the repository. Default branch can only be created on non-empty repositories."
   type        = string
-  default     = "main"
+  default     = null
 }
 
 variable "default_branch_rename" {

@@ -6,6 +6,7 @@ output "name" {
   description = "The name of the repository."
   value       = github_repository.this.name
 }
+
 output "full_name" {
   description = "A string of the form 'orgname/reponame'."
   value       = github_repository.this.full_name
@@ -42,5 +43,5 @@ output "repo_id" {
 
 output "default_branch" {
   description = "The name of the default branch of the repository."
-  value       = var.default_branch
+  value       = try(github_branch.default[0].branch, github_branch_default.this[0].branch, "main")
 }

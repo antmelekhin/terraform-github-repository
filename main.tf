@@ -46,14 +46,14 @@ resource "github_repository" "this" {
 ################################################################
 
 resource "github_branch" "default" {
-  count = var.default_branch == "main" || var.default_branch_rename == true ? 0 : 1
+  count = var.default_branch == null || var.default_branch_rename == true ? 0 : 1
 
   repository = github_repository.this.name
   branch     = var.default_branch
 }
 
 resource "github_branch_default" "this" {
-  count = var.default_branch == "main" ? 0 : 1
+  count = var.default_branch == null ? 0 : 1
 
   repository = github_repository.this.name
   branch     = var.default_branch
