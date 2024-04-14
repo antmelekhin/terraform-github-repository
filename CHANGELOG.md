@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/antmelekhin/terraform-github-repository/compare/v1.3.1...v1.3.2) (2024-04-14)
+
+
+### Fixes
+
+* update `default_branch` conditional expression ([#10](https://github.com/antmelekhin/terraform-github-repository/issues/10)) ([5006473](https://github.com/antmelekhin/terraform-github-repository/commit/5006473a179934e9027eb7e93da8657fbdea130d))
+
 ## [1.3.1](https://github.com/antmelekhin/terraform-github-repository/compare/v1.3.0...v1.3.1) (2024-04-05)
 
 
