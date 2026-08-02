@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.3.2...v1.4.0) (2026-08-02)
+
+
+### Features
+
+* added `vulnerability_alerts_enabled` resource instead deprecated variables ([d637e32](https://github.com/antmelekhin/terraform-github-repository/commit/d637e32c47296afe51fd5940dc7a92f3d3b11f96))
+
 ## [1.3.2](https://github.com/antmelekhin/terraform-github-repository/compare/v1.3.1...v1.3.2) (2024-04-14)
 
 
