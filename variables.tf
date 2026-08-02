@@ -151,22 +151,16 @@ variable "archive_on_destroy" {
   default     = false
 }
 
-variable "vulnerability_alerts" {
-  description = "Set to `false` to disable security alerts for vulnerable dependencies."
-  type        = bool
-  default     = true
-}
-
-variable "ignore_vulnerability_alerts_during_read" {
-  description = "Set to `true` to not call the vulnerability alerts endpoint so the resource can also be used without admin permissions during read."
-  type        = bool
-  default     = null
-}
-
 variable "topics" {
   description = "The list of topics of the repository."
   type        = set(string)
   default     = []
+}
+
+variable "vulnerability_alerts_enabled" {
+  description = "Whether vulnerability alerts are enabled for the repository."
+  type        = bool
+  default     = true
 }
 
 ################################################################

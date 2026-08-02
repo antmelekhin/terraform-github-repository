@@ -35,10 +35,12 @@ resource "github_repository" "this" {
   archived           = var.archived
   archive_on_destroy = var.archive_on_destroy
 
-  vulnerability_alerts                    = var.vulnerability_alerts
-  ignore_vulnerability_alerts_during_read = var.ignore_vulnerability_alerts_during_read
-
   topics = sort(var.topics)
+}
+
+resource "github_repository_vulnerability_alerts" "this" {
+  repository = github_repository.this.name
+  enabled    = var.vulnerability_alerts_enabled
 }
 
 ################################################################

@@ -6,15 +6,15 @@ This module manages GitHub repositories.
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 6.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >= 6.12.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | >= 6.0 |
+| ---- | ------- |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 6.12.0 |
 
 ## Modules
 
@@ -23,18 +23,19 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_actions_variable.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_variable) | resource |
 | [github_branch.additional](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
+| [github_repository_vulnerability_alerts.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_vulnerability_alerts) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_name"></a> [name](#input\_name) | The name of the repository. | `string` | n/a | yes |
 | <a name="input_actions_encrypted_secrets"></a> [actions\_encrypted\_secrets](#input\_actions\_encrypted\_secrets) | Configuring encrypted actions secrets. | `map(string)` | `{}` | no |
 | <a name="input_actions_plaintext_secrets"></a> [actions\_plaintext\_secrets](#input\_actions\_plaintext\_secrets) | Configuring plaintext actions secrets. | `map(string)` | `{}` | no |
@@ -58,7 +59,6 @@ No modules.
 | <a name="input_has_projects"></a> [has\_projects](#input\_has\_projects) | Set to `true` to enable the GitHub Projects features on the repository. | `bool` | `false` | no |
 | <a name="input_has_wiki"></a> [has\_wiki](#input\_has\_wiki) | Set to `true` to enable the GitHub Wiki features on the repository. | `bool` | `false` | no |
 | <a name="input_homepage_url"></a> [homepage\_url](#input\_homepage\_url) | URL of a page describing the project. | `string` | `null` | no |
-| <a name="input_ignore_vulnerability_alerts_during_read"></a> [ignore\_vulnerability\_alerts\_during\_read](#input\_ignore\_vulnerability\_alerts\_during\_read) | Set to `true` to not call the vulnerability alerts endpoint so the resource can also be used without admin permissions during read. | `bool` | `null` | no |
 | <a name="input_is_template"></a> [is\_template](#input\_is\_template) | Set to `true` to tell GitHub that this is a template repository. | `bool` | `false` | no |
 | <a name="input_license_template"></a> [license\_template](#input\_license\_template) | Use the name of the template without the extension. For example, 'mit' or 'mpl-2.0'. | `string` | `null` | no |
 | <a name="input_merge_commit_message"></a> [merge\_commit\_message](#input\_merge\_commit\_message) | Can be `PR_BODY`, `PR_TITLE`, or `BLANK` for a default merge commit message. | `string` | `"PR_TITLE"` | no |
@@ -67,13 +67,13 @@ No modules.
 | <a name="input_squash_merge_commit_title"></a> [squash\_merge\_commit\_title](#input\_squash\_merge\_commit\_title) | Can be `PR_TITLE` or `COMMIT_OR_PR_TITLE` for a default squash merge commit title. | `string` | `"COMMIT_OR_PR_TITLE"` | no |
 | <a name="input_topics"></a> [topics](#input\_topics) | The list of topics of the repository. | `set(string)` | `[]` | no |
 | <a name="input_visibility"></a> [visibility](#input\_visibility) | Visibility of a project. Can be `public`, `private` or `internal` (GHE only). | `string` | `"public"` | no |
-| <a name="input_vulnerability_alerts"></a> [vulnerability\_alerts](#input\_vulnerability\_alerts) | Set to `false` to disable security alerts for vulnerable dependencies. | `bool` | `true` | no |
+| <a name="input_vulnerability_alerts_enabled"></a> [vulnerability\_alerts\_enabled](#input\_vulnerability\_alerts\_enabled) | Whether vulnerability alerts are enabled for the repository. | `bool` | `true` | no |
 | <a name="input_web_commit_signoff_required"></a> [web\_commit\_signoff\_required](#input\_web\_commit\_signoff\_required) | Require contributors to sign off on web-based commits. | `bool` | `false` | no |
 
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_default_branch"></a> [default\_branch](#output\_default\_branch) | The name of the default branch of the repository. |
 | <a name="output_full_name"></a> [full\_name](#output\_full\_name) | A string of the form 'orgname/reponame'. |
 | <a name="output_git_clone_url"></a> [git\_clone\_url](#output\_git\_clone\_url) | URL that can be provided to `git clone` to clone the repository anonymously via the git protocol. |
