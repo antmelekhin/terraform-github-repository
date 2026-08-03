@@ -186,24 +186,17 @@ variable "branches" {
 }
 
 ################################################################
-# Actions secrets
+# Actions secret and variable variables
 ################################################################
 
-variable "actions_encrypted_secrets" {
-  description = "Encrypted value of the secret using the GitHub public key in Base64 format."
-  type        = map(string)
-  default     = {}
+variable "actions_secrets" {
+  description = "Configuring actions secrets."
+  type = object({
+    plaintext = optional(map(string), {})
+    encrypted = optional(map(string), {})
+  })
+  default = {}
 }
-
-variable "actions_plaintext_secrets" {
-  description = "Plaintext value of the secret to be encrypted."
-  type        = map(string)
-  default     = {}
-}
-
-################################################################
-# Actions variables
-################################################################
 
 variable "actions_variables" {
   description = "Configuring actions variables."

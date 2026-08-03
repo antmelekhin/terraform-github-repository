@@ -88,7 +88,7 @@ resource "github_branch" "additional" {
 ################################################################
 
 resource "github_actions_secret" "plaintext" {
-  for_each = var.actions_plaintext_secrets
+  for_each = var.actions_secrets.plaintext
 
   repository  = github_repository.this.name
   secret_name = each.key
@@ -96,13 +96,13 @@ resource "github_actions_secret" "plaintext" {
 }
 
 data "github_actions_public_key" "this" {
-  count = length(var.actions_encrypted_secrets) > 0 ? 1 : 0
+  count = length(var.actions_secrets.encrypted) > 0 ? 1 : 0
 
   repository = github_repository.this.name
 }
 
 resource "github_actions_secret" "encrypted" {
-  for_each = var.actions_encrypted_secrets
+  for_each = var.actions_secrets.encrypted
 
   repository      = github_repository.this.name
   secret_name     = each.key

@@ -39,8 +39,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_name"></a> [name](#input\_name) | The name of the repository. | `string` | n/a | yes |
-| <a name="input_actions_encrypted_secrets"></a> [actions\_encrypted\_secrets](#input\_actions\_encrypted\_secrets) | Encrypted value of the secret using the GitHub public key in Base64 format. | `map(string)` | `{}` | no |
-| <a name="input_actions_plaintext_secrets"></a> [actions\_plaintext\_secrets](#input\_actions\_plaintext\_secrets) | Plaintext value of the secret to be encrypted. | `map(string)` | `{}` | no |
+| <a name="input_actions_secrets"></a> [actions\_secrets](#input\_actions\_secrets) | Configuring actions secrets. | <pre>object({<br/>    plaintext = optional(map(string), {})<br/>    encrypted = optional(map(string), {})<br/>  })</pre> | `{}` | no |
 | <a name="input_actions_variables"></a> [actions\_variables](#input\_actions\_variables) | Configuring actions variables. | `map(string)` | `{}` | no |
 | <a name="input_allow_auto_merge"></a> [allow\_auto\_merge](#input\_allow\_auto\_merge) | Set to `true` to allow auto-merging pull requests on the repository. | `bool` | `false` | no |
 | <a name="input_allow_merge_commit"></a> [allow\_merge\_commit](#input\_allow\_merge\_commit) | Set to `false` to disable merge commits on the repository. | `bool` | `true` | no |
