@@ -84,24 +84,35 @@ resource "github_branch" "additional" {
 }
 
 ################################################################
-# Actions secret and variable
+# Actions secret
 ################################################################
 
-locals {
-  actions_encrypted_secrets = { for name, value in var.actions_encrypted_secrets : name => { encrypted = value } }
-  actions_plaintext_secrets = { for name, value in var.actions_plaintext_secrets : name => { plaintext = value } }
+resource "github_actions_secret" "plaintext" {
+  for_each = var.actions_plaintext_secrets
 
-  actions_secrets = merge(local.actions_encrypted_secrets, local.actions_plaintext_secrets)
+  repository  = github_repository.this.name
+  secret_name = each.key
+  value       = each.value
 }
 
-resource "github_actions_secret" "this" {
-  for_each = local.actions_secrets
+data "github_actions_public_key" "this" {
+  count = length(var.actions_encrypted_secrets) > 0 ? 1 : 0
+
+  repository = github_repository.this.name
+}
+
+resource "github_actions_secret" "encrypted" {
+  for_each = var.actions_encrypted_secrets
 
   repository      = github_repository.this.name
   secret_name     = each.key
-  encrypted_value = try(each.value.encrypted, null)
-  plaintext_value = try(each.value.plaintext, null)
+  key_id          = data.github_actions_public_key.this[0].key_id
+  value_encrypted = each.value
 }
+
+################################################################
+# Actions variable
+################################################################
 
 locals {
   actions_variables = { for name, value in var.actions_variables : name => value }
