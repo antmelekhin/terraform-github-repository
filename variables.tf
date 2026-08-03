@@ -186,7 +186,7 @@ variable "branches" {
 }
 
 ################################################################
-# Actions secret and variable variables
+# Actions secrets and variables variables
 ################################################################
 
 variable "actions_secrets" {

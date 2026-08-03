@@ -84,7 +84,7 @@ resource "github_branch" "additional" {
 }
 
 ################################################################
-# Actions secret
+# Actions secrets
 ################################################################
 
 resource "github_actions_secret" "plaintext" {
@@ -111,7 +111,7 @@ resource "github_actions_secret" "encrypted" {
 }
 
 ################################################################
-# Actions variable
+# Actions variables
 ################################################################
 
 locals {
