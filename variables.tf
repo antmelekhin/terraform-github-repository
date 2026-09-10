@@ -1,5 +1,5 @@
 ################################################################
-# Repository variables
+# Repository
 ################################################################
 
 variable "name" {
@@ -164,7 +164,7 @@ variable "vulnerability_alerts_enabled" {
 }
 
 ################################################################
-# Branches variables
+# Branches
 ################################################################
 
 variable "default_branch" {
@@ -186,19 +186,16 @@ variable "branches" {
 }
 
 ################################################################
-# Actions secret and variable variables
+# Actions secrets and variables
 ################################################################
 
-variable "actions_encrypted_secrets" {
-  description = "Configuring encrypted actions secrets."
-  type        = map(string)
-  default     = {}
-}
-
-variable "actions_plaintext_secrets" {
-  description = "Configuring plaintext actions secrets."
-  type        = map(string)
-  default     = {}
+variable "actions_secrets" {
+  description = "Configuring actions secrets."
+  type = object({
+    plaintext = optional(map(string), {})
+    encrypted = optional(map(string), {})
+  })
+  default = {}
 }
 
 variable "actions_variables" {

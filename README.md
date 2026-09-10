@@ -7,7 +7,7 @@ This module manages GitHub repositories.
 
 | Name | Version |
 | ---- | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_github"></a> [github](#requirement\_github) | >= 6.12.0 |
 
 ## Providers
@@ -24,21 +24,22 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [github_actions_secret.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
+| [github_actions_secret.encrypted](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
+| [github_actions_secret.plaintext](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_secret) | resource |
 | [github_actions_variable.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_variable) | resource |
 | [github_branch.additional](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
 | [github_branch_default.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) | resource |
 | [github_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 | [github_repository_vulnerability_alerts.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_vulnerability_alerts) | resource |
+| [github_actions_public_key.this](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/actions_public_key) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_name"></a> [name](#input\_name) | The name of the repository. | `string` | n/a | yes |
-| <a name="input_actions_encrypted_secrets"></a> [actions\_encrypted\_secrets](#input\_actions\_encrypted\_secrets) | Configuring encrypted actions secrets. | `map(string)` | `{}` | no |
-| <a name="input_actions_plaintext_secrets"></a> [actions\_plaintext\_secrets](#input\_actions\_plaintext\_secrets) | Configuring plaintext actions secrets. | `map(string)` | `{}` | no |
+| <a name="input_actions_secrets"></a> [actions\_secrets](#input\_actions\_secrets) | Configuring actions secrets. | <pre>object({<br/>    plaintext = optional(map(string), {})<br/>    encrypted = optional(map(string), {})<br/>  })</pre> | `{}` | no |
 | <a name="input_actions_variables"></a> [actions\_variables](#input\_actions\_variables) | Configuring actions variables. | `map(string)` | `{}` | no |
 | <a name="input_allow_auto_merge"></a> [allow\_auto\_merge](#input\_allow\_auto\_merge) | Set to `true` to allow auto-merging pull requests on the repository. | `bool` | `false` | no |
 | <a name="input_allow_merge_commit"></a> [allow\_merge\_commit](#input\_allow\_merge\_commit) | Set to `false` to disable merge commits on the repository. | `bool` | `true` | no |
