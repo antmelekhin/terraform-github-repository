@@ -1,5 +1,5 @@
 ################################################################
-# Repository variables
+# Repository
 ################################################################
 
 variable "name" {
@@ -164,7 +164,7 @@ variable "vulnerability_alerts_enabled" {
 }
 
 ################################################################
-# Branches variables
+# Branches
 ################################################################
 
 variable "default_branch" {
@@ -186,7 +186,7 @@ variable "branches" {
 }
 
 ################################################################
-# Actions secrets and variables variables
+# Actions secrets and variables
 ################################################################
 
 variable "actions_secrets" {
