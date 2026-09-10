@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.4.0...v2.0.0) (2026-09-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* update `github_actions_secret` arguments (#11)
+
+### Features
+
+* update `github_actions_secret` arguments ([#11](https://github.com/antmelekhin/terraform-github-repository/issues/11)) ([ab3a471](https://github.com/antmelekhin/terraform-github-repository/commit/ab3a4717845d5245cc4b899d2b3bfd900b14b01b))
+
 ## [1.4.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.3.2...v1.4.0) (2026-08-02)
 
 
