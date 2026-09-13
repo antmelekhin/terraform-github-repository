@@ -68,7 +68,7 @@ No modules.
 | <a name="input_squash_merge_commit_title"></a> [squash\_merge\_commit\_title](#input\_squash\_merge\_commit\_title) | Can be `PR_TITLE` or `COMMIT_OR_PR_TITLE` for a default squash merge commit title. | `string` | `"COMMIT_OR_PR_TITLE"` | no |
 | <a name="input_topics"></a> [topics](#input\_topics) | The list of topics of the repository. | `set(string)` | `[]` | no |
 | <a name="input_visibility"></a> [visibility](#input\_visibility) | Visibility of a project. Can be `public`, `private` or `internal` (GHE only). | `string` | `"public"` | no |
-| <a name="input_vulnerability_alerts_enabled"></a> [vulnerability\_alerts\_enabled](#input\_vulnerability\_alerts\_enabled) | Whether vulnerability alerts are enabled for the repository. | `bool` | `true` | no |
+| <a name="input_vulnerability_alerts_enabled"></a> [vulnerability\_alerts\_enabled](#input\_vulnerability\_alerts\_enabled) | Whether vulnerability alerts are enabled for the repository. Set to `true` to enable or `false` to disable security alerts for vulnerable dependencies. Leave as `null` to avoid managing vulnerability alerts. | `bool` | `null` | no |
 | <a name="input_web_commit_signoff_required"></a> [web\_commit\_signoff\_required](#input\_web\_commit\_signoff\_required) | Require contributors to sign off on web-based commits. | `bool` | `false` | no |
 
 ## Outputs

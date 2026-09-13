@@ -39,6 +39,8 @@ resource "github_repository" "this" {
 }
 
 resource "github_repository_vulnerability_alerts" "this" {
+  count = var.vulnerability_alerts_enabled == null ? 0 : 1
+
   repository = github_repository.this.name
   enabled    = var.vulnerability_alerts_enabled
 }

@@ -158,9 +158,9 @@ variable "topics" {
 }
 
 variable "vulnerability_alerts_enabled" {
-  description = "Whether vulnerability alerts are enabled for the repository."
+  description = "Whether vulnerability alerts are enabled for the repository. Set to `true` to enable or `false` to disable security alerts for vulnerable dependencies. Leave as `null` to avoid managing vulnerability alerts."
   type        = bool
-  default     = true
+  default     = null
 }
 
 ################################################################
