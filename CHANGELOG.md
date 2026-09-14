@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/antmelekhin/terraform-github-repository/compare/v2.0.0...v2.0.1) (2026-09-14)
+
+
+### Fixes
+
+* set `vulnerability_alerts` only if it is required ([0f3f21f](https://github.com/antmelekhin/terraform-github-repository/commit/0f3f21f58c7015b33a9d919899ed531696970d9c))
+
 ## [2.0.0](https://github.com/antmelekhin/terraform-github-repository/compare/v1.4.0...v2.0.0) (2026-09-10)
 
 
